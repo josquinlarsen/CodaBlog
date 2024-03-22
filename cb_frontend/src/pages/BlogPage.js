@@ -34,7 +34,7 @@ function BlogPage({ setBlog }) {
             const blogs = await getResponse.json();
             setBlogs(blogs);
         } else {
-            console.error(`helpful deletion message = ${_id}, status code = ${response.status}`)
+            console.error(`There was a problem deleting ${_id}, status code = ${response.status}. Please try again later`)
         }
     }
 
@@ -50,8 +50,8 @@ function BlogPage({ setBlog }) {
             <h2 class="pagetitle">Posts</h2>
             </div>
             <div size="36" class="spacer"></div>
-            {/* <p>Paragraph about this page.</p> */}
-            <Link to="/create">Add </Link>
+            
+            {/* <Link to="/create">Add </Link> */}
             <BlogList 
                 blogs={blogs} 
                 onEdit={onEditBlog} 

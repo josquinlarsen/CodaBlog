@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-function RecentBlogs( {setBlog}) {
-    const redirect = useNavigate();
+// function RecentBlogs( {setBlog}) {
+//     const redirect = useNavigate();
 
-    const [blogs, setBlogs] = useState([]);
+//     const [blogs, setBlogs] = useState([]);
 
-    const loadRecentBlogs = async () => {
-        const response = await fetch('/blogs');
-        const blogs = await response.json();
-        setBlogs(blogs);
-    }
-}
+//     const loadRecentBlogs = async () => {
+//         const response = await fetch('/blogs');
+//         const blogs = await response.json();
+//         setBlogs(blogs);
+//     }
+// }
 
 function HomePage () {
     return (

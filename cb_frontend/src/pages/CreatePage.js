@@ -56,12 +56,12 @@ export const CreatePage = () => {
                         id="date" />
 
                     <label for="blogText">Content</label>
-                    <input
+                    <textarea
                         type="textarea"
                         placeholder="type here..."
                         value={blogText}
                         onChange={e => setBlogText(e.target.value)} 
-                        id="language" />
+                        id="blogText" />
 
                     <label for="submit">
                     <button

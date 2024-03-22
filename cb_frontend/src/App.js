@@ -1,10 +1,12 @@
 // Import dependencies
 import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 // Import Components, styles, media
 import Nav from './components/Nav';
 import './App.css';
+import LoginPage from './components/Login';
+import Logout from './components/Logout';
 
 // Import pages you have completed:
 // Home, Topics, Gallery, Contact, and Staff Pages 
@@ -20,6 +22,13 @@ import EditPage from './pages/EditPage';
 // Define the function that renders the content in Routes, using State.
 function App() {
 
+  // const [isLoggedIn, setIsLoggedIn] = useState(false); //user not logged in
+
+  // const handleLogout = () => {
+  //   localStorage.removeItem('token');
+  //   setIsLoggedIn(false);
+  // };
+
   const [blog, setBlogToEdit] = useState([])
 
   return (
@@ -29,6 +38,21 @@ function App() {
           <header>
             <div class="navbar">
             <div><h1>CodaBlog</h1></div>
+
+            {/* <nav clasName = "App-nav">
+              {isLoggedIn ? (
+                <>
+                <Nav />
+                </>
+
+              ) : (
+                <>
+                <Link to='/'>Home</Link>
+                <Link to='/BlogPage'>Blog</Link>
+                <div><Link to='/'></Link> LogIn</div>
+                </>
+              )}
+            </nav> */}
              <Nav />
             <div>Login</div>
             </div>
