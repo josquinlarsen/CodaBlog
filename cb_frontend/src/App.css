@@ -1,0 +1,334 @@
+/*  ===== MOBILE styles (reside at the top and are inherited by all devices) ===== */
+/*  ===== See tablet, desktop, and print @media queries at the bottom. */
+
+
+/*   ----- Imports  -----  */
+  /* @import 'node_modules/modern-normalize/modern-normalize.css';  npm install modern-normalize  Resets elements for browser consistency.  https://www.npmjs.com/package/modern-normalize */         
+  /* @import "component1.css";   Component-specific stylesheets, if any.   */
+  @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+/*   ----- Variables  -----  */
+:root {
+    --black:      rgba(11,32,39);
+    --lightblue:  rgba(206,215,242);
+    --blue:       rgba(83,104,166);
+    --green:      rgba(3,96,22);
+    --mint:       rgba(143,247,167);
+    --yellow:     rgba(239, 202, 8);
+    --salt:       rgba(247, 247, 247);  }
+  
+  /*  ----- Viewport ----- elements inherited by all remaining elements ----- */
+  body {       /* Can alternatively define in html {}. */
+    background-color: var(--salt);
+    color:var(--slate);
+    font-family:"PT Sans", sans-serif; /* Define with at least one font name and its related generic family name.*/
+    margin:;
+    padding:;
+    max-width:;
+  }
+  
+  /*  ----- Page layout blocks -----  */
+  header {
+    background-color: var(--green);
+    color:var(--salt);
+    position: relative;
+    border-bottom: 3px solid var(--slate);
+    padding:2%;
+  }
+
+  .navbar {
+    
+    color:var(--salt);
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  main {
+    min-height: 100vh;
+  }
+
+  .spacer {min-height: 36px; min-width:36px;}
+
+  h2 {
+    text-transform: uppercase;
+    color: var(--green);
+    font-size: calc(1rem);
+    font-weight: 700;
+    letter-spacing: 2px;
+    overflow-wrap: break-word;
+    padding:1% 0% 0% 1% ;
+  }
+
+  section {
+    display: block;
+  }
+  article {
+    /* text-wrap:balance; */
+    /* margin:15 auto; */
+    padding-left: 3%;
+  }
+
+  .blogblock {
+    
+    border-bottom: 3px double var(--green);
+    max-width:50%;
+  }
+  .blogblock textarea {
+    max-width:50%;
+  }
+
+  .blogblock h3 {
+    color: var(--blue);
+    font-weight: 600;
+    font-size: calc(1rem);
+    letter-spacing: 1px;
+    padding: 1% 0% 0% 3% ;
+  }
+
+  .blogblock article { display:block; align-items: center;
+  }
+
+  .blogblock p { text-align:right;}
+  
+
+    #topic1 {}
+    #topic2 {}
+  div {}
+  aside {}
+  footer {
+    bottom:0;
+    width: 100%;
+    height: 3rem;
+
+    max-width: 1200px;
+    text-align: center;
+    border-top:3px solid var(--slate);
+    /* padding: 3%; */
+  }
+  
+  /* ----- Anchors ----- Text links */
+  a {}
+  a:link {color:var(--mint);}
+  a:hover {}
+  a:active {}
+  a:visited {}
+  
+  /*  ----- Navigation ----- Override text links for navigation only.  */
+  nav {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    align-items: center;
+    height:50px;
+  }
+  nav a {
+    text-decoration:none;
+    padding: 3px 10px 5px 10px;
+  }
+  nav a:hover {
+    background-color: var(--slateT);
+    border: 1.5px solid var(--slate);
+    border-radius: 5px;
+    color: white;
+  }
+  
+  /*  -----  Typography  ----- */
+  p {}
+  br {}
+  ol, ul, dl {}
+  li {}
+  dt {}
+  dd {}
+  
+  h1, h2, h3, h4, h5, h6 {} 
+  h1 {font-size:175%;}
+  h2 {}
+  h3 {}
+  h4 {}
+  h5 {}
+  h6 {}
+  
+  abbr {}
+  acronym {}
+  address {}
+  blockquote {}
+    q {}
+    cite {}
+  em {}
+  hr {}
+  mark {}
+  s {}
+  span {}
+  strong {}
+  sub {}
+  sup {}
+  time {}
+  
+  /*  ----- Coding or instructional typography ----- */
+  pre {}
+  code {}
+  kbd {}
+  samp {}
+  var {}
+  del {} 
+  ins {}
+  
+  /*  ----- Table ----- */
+  table {}
+  caption {}
+  thead {}
+  tbody {}
+  tfoot {}
+  tr {}
+    tr:nth-child(even) {}
+  th {}
+  td {}
+    td:nth-child(1) {}
+  colgroup {}
+  data {}
+  datalist {}
+  
+  
+  /*  ----- Form ----- */
+  form {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family:"PT-Sans", sans-serif;
+    font-size:95%;
+  
+  }
+  fieldset {
+    border:none;
+    margin-bottom:
+  }
+  legend {}
+  label {
+    display: block;
+    border-radius:25px;
+    margin-top:3%;
+    padding:2%;
+  }
+  label.required:after{
+    content:"*";
+    color:red;
+  }
+  button {
+    margin-top:5%;
+    padding:1%;
+    float: right; 
+  }
+  input[type="textarea"] {
+    border: 1.5px solid var(--black);
+    border-radius: 5px;
+    height:250px;
+    width:300px;
+    font-size:110%;
+
+  }
+  input {
+    border: 1.5px solid var(--slateT);
+    border-radius: 5px;
+    padding:1%;
+    font-size: 110%;
+    width:300px;
+  }
+  input[type="button"], button[type="button"], input[type="submit"] {
+    border-radius:5px;
+    background-color:var(--slateT);
+    color:white;
+    font-size: 1rem;
+    font-weight:bold;
+    border:1.5px solid var(--slate);
+    padding:3%;
+  }
+  input[type="button"]:hover, button[type="button"]:hover, input[type="submit"]:hover {
+    background-color:white;
+    color:var(--slate);
+  }
+
+  select {}
+    optgroup {}
+    option {}
+  textarea {}
+  output {}
+  meter {}
+  progress {}
+
+  :focus{
+    background-color: var(--lightblue);
+    color:white;
+  }
+  /* *:required {
+    border: 3.5px solid limegreen;
+  } */
+  
+  
+  /* ----- Media ----- */
+  figure {}
+    figcaption {
+      display:block;
+      color:var(--slate);
+      text-align: center;
+    }
+    figure img {}
+  svg {}
+  picture {}
+    source {}
+  iframe {
+    border-radius:25px;
+    margin:1%;
+    width:400px; 
+    height:255px; 
+  }
+  video {}
+  audio {}
+  embed {}
+  object {}
+  
+  /*  ----- Classes for alignment, positioning, widths, grids, embellishments, and animation -----  */
+  .media {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+  }
+
+  .gallery {}
+  
+  .floatright {}
+  .floatleft {}
+  .center-middle {}
+  
+  .ten {}
+  .twenty {}
+  .thirty {}
+  .forty {}
+  .fifty {}
+  .sixty {}
+  .seventy {}
+  .eighty {}
+  
+  .radius {}
+  .circle {}
+  .boxshadow {}
+  .tshadow {} 
+  .gradient {}
+  .shape {}
+  
+  @keyframes App-logo {}
+  
+  /*   ===== TABLET  media query overrides mobile styles ===== */
+  @media all and (min-width: 600px) {}
+  
+  /*   ===== DESKTOP  media query overrides mobile and tablet styles ===== */
+  @media all and (min-width: 1080px) {}
+  
+  /*   ===== PRINT  media query overrides previous styles =====  */
+  @media print {}
+  
