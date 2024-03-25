@@ -8,8 +8,8 @@ function Nav() {
   return (
     <nav>
         {/* Add links to Home, Topics, Gallery, Contact, and Staff Pages  */}
-        <Link to="/">Home</Link>
-        <Link to="/BlogPage">Blog</Link>
+        <Link to="/">home</Link>
+        <Link to="/BlogPage">blog</Link>
         {/* <div><Link to="/">LogIn</Link></div> */}
     </nav>
   );

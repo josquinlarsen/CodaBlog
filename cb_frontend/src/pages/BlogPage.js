@@ -17,7 +17,7 @@ function BlogPage({ setBlog }) {
     const loadBlogs = async () => {
         const response = await fetch('/blogs');
         const blogs = await response.json();
-        setBlogs(blogs);
+        setBlogs(blogs.reverse());
     } 
     
     

@@ -1,19 +1,28 @@
-import React from 'react';
+import { React, useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-// function RecentBlogs( {setBlog}) {
-//     const redirect = useNavigate();
+// import BlogList from '../components/BlogList';
+// import RecentBlog from '../components/RecentBlog';
+import RecentBlogList from '../components/RecentBlogList';
 
-//     const [blogs, setBlogs] = useState([]);
+function HomePage({ setBlog }) {
+    // Use the Navigate for redirection
+    const redirect = useNavigate();
 
-//     const loadRecentBlogs = async () => {
-//         const response = await fetch('/blogs');
-//         const blogs = await response.json();
-//         setBlogs(blogs);
-//     }
-// }
+    // Use state to bring in the data
+    const [blogs, setBlogs] = useState([]);
 
-function HomePage () {
+    // RETRIEVE the entire list of blogs
+    const loadRecentBlogs = async () => {
+        const response = await fetch('/blogs');
+        const blogs = await response.json();
+        setBlogs(blogs.reverse());
+    } 
+
+useEffect(() => {
+    loadRecentBlogs();
+}, []);
+
     return (
         <>
         
@@ -23,7 +32,9 @@ function HomePage () {
         <div size="36" class="spacer"></div>
         <section>
         <article>
-            <p>Lorem ipsum</p>
+            <RecentBlogList
+            blogs={blogs.reverse().slice(0,2)} />
+           
         </article>
         </section>
         </>

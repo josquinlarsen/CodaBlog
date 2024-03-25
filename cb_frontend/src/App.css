@@ -47,6 +47,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-size:calc(1rem);
+    font-weight: 700;
   }
 
   .codapic img { height: 70px; border-radius: 50%; border:3px solid var(--salt);}
@@ -147,6 +149,7 @@
     border: 1.5px solid var(--slate);
     border-radius: 5px;
     color: white;
+    font-size:calc(1.1rem);
   }
   
   /*  -----  Typography  ----- */
@@ -228,7 +231,7 @@
   }
   label.required:after{
     content:"*";
-    color:red;
+    color:var(--yellow);
   }
   button {
     font-family:"PT-Sans", sans-serif;
@@ -258,14 +261,14 @@
   input[type="button"], button[type="button"], input[type="submit"] {
     border-radius:5px;
     background-color:var(--black);
-    color:white;
+    color:var(--salt);
     font-size: 1rem;
     font-weight:bold;
     border:1.5px solid var(--black);
     padding:3%;
   }
   input[type="button"]:hover, button[type="button"]:hover, input[type="submit"]:hover {
-    background-color:white;
+    background-color:var(--salt);
     color:var(--black);
   }
 
