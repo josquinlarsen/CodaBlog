@@ -1,8 +1,6 @@
 import { React, useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-// import BlogList from '../components/BlogList';
-// import RecentBlog from '../components/RecentBlog';
 import RecentBlogList from '../components/RecentBlogList';
 
 function HomePage({ setBlog }) {

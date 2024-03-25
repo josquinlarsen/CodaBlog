@@ -21,10 +21,10 @@ export const EditPage = ({ blogToEdit }) => {
         });
 
         if (response.status === 200) {
-            alert(`helpful editing message`);
+            alert(`You're changes have been saved`);
         } else {
             const errMessage = await response.json();
-            alert(`helpful editing message ${response.status}. ${errMessage.Error}`);
+            alert(`There has been some kind of issue. Try again later. ${response.status}. ${errMessage.Error}`);
         }
         redirect("/BlogPage");
     }
@@ -33,23 +33,16 @@ export const EditPage = ({ blogToEdit }) => {
         <>
         <article>
             <h2>Edit a Post</h2>
-            {/* <p>Paragraph about this page.</p> */}
+            
             <form onSubmit={(e) => { e.preventDefault();}}>
                 <fieldset>
-                    <legend>Which post are you adding?</legend>
+                    <legend>Make your changes here:</legend>
                     <label for="title">Post Title</label>
                     <input
                         type="text"
                         value={blogTitle}
                         onChange={e => setBlogTitle(e.target.value)} 
                         id="title" />
-                    
-                    {/* <label for="date">Date</label>
-                    <input
-                        type="date"
-                        value={blogDate}
-                        onChange={e => setBlogDate(e.target.value)} 
-                        id="date" /> */}
 
                     <label for="blogText">Post</label>
                     <textarea

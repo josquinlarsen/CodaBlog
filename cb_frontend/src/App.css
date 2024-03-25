@@ -1,10 +1,4 @@
-/*  ===== MOBILE styles (reside at the top and are inherited by all devices) ===== */
-/*  ===== See tablet, desktop, and print @media queries at the bottom. */
 
-
-/*   ----- Imports  -----  */
-  /* @import 'node_modules/modern-normalize/modern-normalize.css';  npm install modern-normalize  Resets elements for browser consistency.  https://www.npmjs.com/package/modern-normalize */         
-  /* @import "component1.css";   Component-specific stylesheets, if any.   */
   @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 
@@ -22,10 +16,7 @@
   body {       /* Can alternatively define in html {}. */
     background-color: var(--salt);
     color:var(--slate);
-    font-family:"PT Sans", sans-serif; /* Define with at least one font name and its related generic family name.*/
-    margin:;
-    padding:;
-    max-width:;
+    font-family:"PT Sans", sans-serif; 
   }
   
   /*  ----- Page layout blocks -----  */
@@ -38,7 +29,6 @@
   }
 
   .navbar {
-    
     color:var(--salt);
     width: 100%;
     height: 70px;
@@ -53,9 +43,7 @@
 
   .codapic img { height: 70px; border-radius: 50%; border:3px solid var(--salt);}
 
-  main {
-    min-height: 100vh;
-  }
+  main { min-height: 100vh; }
 
   .spacer {min-height: 36px; min-width:36px;}
 
@@ -69,14 +57,8 @@
     padding:1% 0% 0% 1% ;
   }
 
-  section {
-    display: block;
-  }
-  article {
-    /* text-wrap:balance; */
-    /* margin:15 auto; */
-    padding-left: 3%;
-  }
+  section { display: block;}
+  article { padding-left: 3%; }
 
   .blogblock {
     
@@ -95,8 +77,7 @@
     padding: 1% 0% 0% 3% ;
   }
 
-  .blogblock article { display:block; align-items: center;
-  }
+  .blogblock article { display:block; align-items: center; }
 
   .blogblock p { text-align:right;}
 
@@ -109,10 +90,6 @@
     height: 2rem;
   }
 
-    #topic1 {}
-    #topic2 {}
-  div {}
-  aside {}
   footer {
     bottom:0;
     width: 100%;
@@ -121,7 +98,6 @@
     max-width: 1200px;
     text-align: center;
     border-top:3px solid var(--slate);
-    /* padding: 3%; */
   }
   
   /* ----- Anchors ----- Text links */
@@ -152,61 +128,7 @@
     font-size:calc(1.1rem);
   }
   
-  /*  -----  Typography  ----- */
-  p {}
-  br {}
-  ol, ul, dl {}
-  li {}
-  dt {}
-  dd {}
-  
-  h1, h2, h3, h4, h5, h6 {} 
   h1 {font-size:175%;}
-  h2 {}
-  h3 {}
-  h4 {}
-  h5 {}
-  h6 {}
-  
-  abbr {}
-  acronym {}
-  address {}
-  blockquote {}
-    q {}
-    cite {}
-  em {}
-  hr {}
-  mark {}
-  s {}
-  span {}
-  strong {}
-  sub {}
-  sup {}
-  time {}
-  
-  /*  ----- Coding or instructional typography ----- */
-  pre {}
-  code {}
-  kbd {}
-  samp {}
-  var {}
-  del {} 
-  ins {}
-  
-  /*  ----- Table ----- */
-  table {}
-  caption {}
-  thead {}
-  tbody {}
-  tfoot {}
-  tr {}
-    tr:nth-child(even) {}
-  th {}
-  td {}
-    td:nth-child(1) {}
-  colgroup {}
-  data {}
-  datalist {}
   
   
   /*  ----- Form ----- */
@@ -222,7 +144,7 @@
     border:none;
     margin-bottom:
   }
-  legend {}
+
   label {
     display: block;
     border-radius:25px;
@@ -271,74 +193,7 @@
     background-color:var(--salt);
     color:var(--black);
   }
-
-  select {}
-    optgroup {}
-    option {}
-  textarea {}
-  output {}
-  meter {}
-  progress {}
-
-  /* :focus{
-    background-color: var(--lightblue);
-    color:white; } */
   
-  /* *:required {
-    border: 3.5px solid limegreen;
-  } */
-  
-  
-  /* ----- Media ----- */
-  figure {}
-    figcaption {
-      display:block;
-      color:var(--slate);
-      text-align: center;
-    }
-    figure img {}
-  svg {}
-  picture {}
-    source {}
-  iframe {
-    border-radius:25px;
-    margin:1%;
-    width:400px; 
-    height:255px; 
-  }
-  video {}
-  audio {}
-  embed {}
-  object {}
-  
-  /*  ----- Classes for alignment, positioning, widths, grids, embellishments, and animation -----  */
-  .media {
-    display:flex;
-    flex-wrap:wrap;
-    justify-content: center;
-  }
-
-  .gallery {}
-  
-  .floatright {}
-  .floatleft {}
-  .center-middle {}
-  
-  .ten {}
-  .twenty {}
-  .thirty {}
-  .forty {}
-  .fifty {}
-  .sixty {}
-  .seventy {}
-  .eighty {}
-  
-  .radius {}
-  .circle {}
-  .boxshadow {}
-  .tshadow {} 
-  .gradient {}
-  .shape {}
   
   @keyframes App-logo {}
   

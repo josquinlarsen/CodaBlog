@@ -1,21 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
-// Change the icons, function names, and parameters 
-// to fit your portfolio topic and schema.
-
 export const CreatePage = () => {
 
-    function getDate() {
-        const today = new Date();
-        const month = today.toLocaleString('default', { month: 'long'});
-        const year = today.getFullYear();
-        const date = today.getDate();
-        return `${date} ${month}, ${year}`
-    }
-
     const [blogTitle, setBlogTitle]       = useState('');
-    const [blogDate, setBlogDate]         = useState(getDate());
+    const [blogDate, setBlogDate]         = useState('');
     const [blogText, setBlogText] = useState('');
     
     const redirect = useNavigate();
@@ -30,14 +19,13 @@ export const CreatePage = () => {
             },
         });
         if(response.status === 201){
-            alert(`helpful adding message`);
+            alert(`Your post has been succesfully created`);
             redirect("/");
         } else {
-            alert(`helpful adding message = ${response.status}`);
+            alert(`There's been an issue. Try again later = ${response.status}`);
             redirect("/BlogPage");
         }
     };
-
 
     return (
         <>
@@ -55,14 +43,6 @@ export const CreatePage = () => {
                         onChange={e => setBlogTitle(e.target.value)} 
                         id="title" />
                     
-                    {/* <label for="date">Date</label>
-                    <input
-                        type="date"
-                        value={blogDate}
-                        placeholder="Post's date"
-                        onChange={e => setBlogDate(e.target.value)} 
-                        id="date" /> */}
-
                     <label for="blogText">Content</label>
                     <textarea
                         type="textarea"
