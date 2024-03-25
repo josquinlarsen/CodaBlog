@@ -1,12 +1,13 @@
 // Import dependencies
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import coda from '/Users/josquin/Desktop/CodaBlog/frontend/src/images/coda-close.png';
 
 // Import Components, styles, media
 import Nav from './components/Nav';
 import './App.css';
-import LoginPage from './components/Login';
-import Logout from './components/Logout';
+// import LoginPage from './components/Login';
+// import Logout from './components/Logout';
 
 // Import pages you have completed:
 // Home, Topics, Gallery, Contact, and Staff Pages 
@@ -54,7 +55,7 @@ function App() {
               )}
             </nav> */}
              <Nav />
-            <div>Login</div>
+            <div class="codapic"><img src={coda}/></div>
             </div>
           </header>
           <main>

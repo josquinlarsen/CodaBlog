@@ -1,6 +1,8 @@
 import { React, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { IoMdAddCircleOutline } from "react-icons/io";
+
 import BlogList from '../components/BlogList';
 import { Link } from 'react-router-dom';
 
@@ -50,8 +52,10 @@ function BlogPage({ setBlog }) {
             <h2 class="pagetitle">Posts</h2>
             </div>
             <div size="36" class="spacer"></div>
+
+            <div class="addicon">                
+                <Link to="/create"><i><IoMdAddCircleOutline /></i></Link> New Post</div>
             
-            {/* <Link to="/create">Add </Link> */}
             <BlogList 
                 blogs={blogs} 
                 onEdit={onEditBlog} 

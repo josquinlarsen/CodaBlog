@@ -6,8 +6,16 @@ import { useNavigate } from "react-router-dom";
 
 export const CreatePage = () => {
 
+    function getDate() {
+        const today = new Date();
+        const month = today.toLocaleString('default', { month: 'long'});
+        const year = today.getFullYear();
+        const date = today.getDate();
+        return `${date} ${month}, ${year}`
+    }
+
     const [blogTitle, setBlogTitle]       = useState('');
-    const [blogDate, setBlogDate]         = useState('');
+    const [blogDate, setBlogDate]         = useState(getDate());
     const [blogText, setBlogText] = useState('');
     
     const redirect = useNavigate();
@@ -47,13 +55,13 @@ export const CreatePage = () => {
                         onChange={e => setBlogTitle(e.target.value)} 
                         id="title" />
                     
-                    <label for="date">Date</label>
+                    {/* <label for="date">Date</label>
                     <input
                         type="date"
                         value={blogDate}
                         placeholder="Post's date"
                         onChange={e => setBlogDate(e.target.value)} 
-                        id="date" />
+                        id="date" /> */}
 
                     <label for="blogText">Content</label>
                     <textarea
@@ -66,6 +74,7 @@ export const CreatePage = () => {
                     <label for="submit">
                     <button
                         type="submit"
+                        onChange={e => setBlogDate(e.target.value)}
                         onClick={addBlog}
                         id="submit"
                     >Post!</button></label>

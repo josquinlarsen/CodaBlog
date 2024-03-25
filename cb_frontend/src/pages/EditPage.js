@@ -44,15 +44,15 @@ export const EditPage = ({ blogToEdit }) => {
                         onChange={e => setBlogTitle(e.target.value)} 
                         id="title" />
                     
-                    <label for="date">Date</label>
+                    {/* <label for="date">Date</label>
                     <input
                         type="date"
                         value={blogDate}
                         onChange={e => setBlogDate(e.target.value)} 
-                        id="date" />
+                        id="date" /> */}
 
                     <label for="blogText">Post</label>
-                    <input
+                    <textarea
                         type="textarea"
                         value={blogText}
                         onChange={e => setBlogText(e.target.value)} 

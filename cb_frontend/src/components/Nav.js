@@ -10,7 +10,7 @@ function Nav() {
         {/* Add links to Home, Topics, Gallery, Contact, and Staff Pages  */}
         <Link to="/">Home</Link>
         <Link to="/BlogPage">Blog</Link>
-        <div><Link to="/">LogIn</Link></div>
+        {/* <div><Link to="/">LogIn</Link></div> */}
     </nav>
   );
 }
