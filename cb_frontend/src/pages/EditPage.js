@@ -14,7 +14,7 @@ export const EditPage = ({ blogToEdit }) => {
             method: 'PUT',
             body: JSON.stringify({ 
                 blogTitle: blogTitle, 
-                blogDate: blogDate, 
+                // blogDate: blogDate, 
                 blogText: blogText
             }),
             headers: {'Content-Type': 'application/json',},

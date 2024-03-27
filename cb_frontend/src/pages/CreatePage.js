@@ -5,7 +5,7 @@ export const CreatePage = () => {
 
     const [blogTitle, setBlogTitle]       = useState('');
     const [blogDate, setBlogDate]         = useState('');
-    const [blogText, setBlogText] = useState('');
+    const [blogText, setBlogText]         = useState('');
     
     const redirect = useNavigate();
 
@@ -54,7 +54,7 @@ export const CreatePage = () => {
                     <label for="submit">
                     <button
                         type="submit"
-                        onChange={e => setBlogDate(e.target.value)}
+                        value={setBlogDate}
                         onClick={addBlog}
                         id="submit"
                     >Post!</button></label>

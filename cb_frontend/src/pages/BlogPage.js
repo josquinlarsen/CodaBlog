@@ -34,7 +34,7 @@ function BlogPage({ setBlog }) {
         if (response.status === 200) {
             const getResponse = await fetch('/blogs');
             const blogs = await getResponse.json();
-            setBlogs(blogs);
+            setBlogs(blogs.reverse());
         } else {
             console.error(`There was a problem deleting ${_id}, status code = ${response.status}. Please try again later`)
         }
