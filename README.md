@@ -14,3 +14,9 @@ It allows for CRUD functionality. A user can create, read, update, or delete a b
 <p>
   <image src='cb_gifs/cb_home.gif' width=350><br>
 </p>
+Home Page
+
+<p>
+  <image src='cb_gifs/cb_delete.gif' width=350><br>
+</p>
+Delete functionality
