@@ -9,3 +9,8 @@ It allows for CRUD functionality. A user can create, read, update, or delete a b
 - Node.js
 - HTML/CSS
 - JavaScript
+
+## GIF examples
+<p>
+  <image src='cb_gifs/cb_home.gif' width=900<br>
+</p>
