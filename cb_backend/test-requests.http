@@ -4,7 +4,6 @@ content-type: application/json
 
 {
     "blogTitle": "Hello",
-    "blogDate": "2024-03-01",
     "blogText": "This is a test"
 }
 
@@ -15,7 +14,6 @@ content-type: application/json
 
 {
     "blogTitle": "Hello again",
-    "blogDate": "2024-03-11",
     "blogText": "This is a also a test"
 }
 
@@ -25,7 +23,6 @@ content-type: application/json
 
 {
     "blogTitle": "Once more",
-    "blogDate": "2024-02-21",
     "blogText": "This is a test, too"
 }
 
@@ -35,7 +32,6 @@ content-type: application/json
 
 {
     "blogTitle": "No. 4 here",
-    "blogDate": "2024-03-20",
     "blogText": "Again, here is a test 123"
 }
 
@@ -45,7 +41,6 @@ content-type: application/json
 
 {
     "blogTitle": "Last test is the charm",
-    "blogDate": "2024-03-01",
     "blogText": "This is another test"
 }
 
@@ -60,7 +55,7 @@ GET http://localhost:3000/blogs HTTP/1.1
 GET http://localhost:3000/blogs/65fc736d9277020b386ed504 HTTP/1.1
 
 
-### UPDATE one document's year, by ID.
+### UPDATE one document, by ID.
 ### Replace the ID in the following request with one that exists
 ### and update the year:
 PUT http://localhost:3000/blogs/65fc73729277020b386ed508 HTTP/1.1
@@ -68,8 +63,7 @@ content-type: application/json
 
 {
    "blogTitle": "No. 4 here",
-    "blogDate": "2024-04-01",
-    "blogText": "Again, here is a test 123"
+    "blogText": "Again, here is a test 123123"
 }
 
 ### DELETE by ID (responds with nothing if successful):

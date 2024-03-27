@@ -23,7 +23,6 @@ db.once("open", (err) => {
 // SCHEMA: Define the collection's schema.
 const blogSchema = mongoose.Schema({
 	blogTitle:    { type: String,  },
-	blogDate:     { type: Date, required: true },
 	blogText: { type: String, required: true }
 });
 
@@ -33,10 +32,9 @@ const blogs = mongoose.model('Blogs', blogSchema);
 
 
 // CREATE model *****************************************
-const createBlog = async (blogTitle, blogDate, blogText) => {
+const createBlog = async (blogTitle, blogText) => {
     const blog = new blogs({ 
         blogTitle: blogTitle, 
-        blogDate: blogDate, 
         blogText: blogText 
     });
     return blog.save();
@@ -47,6 +45,13 @@ const createBlog = async (blogTitle, blogDate, blogText) => {
 // Retrieve all documents and return a promise.
 const retrieveBlogs = async () => {
     const query = blogs.find();
+    return query.exec();
+}
+
+
+//Retrieve 3 most recents posts and return a promise.
+const retrieveRecentBlogs = async () => {
+    const query = blogs.find({$slice: 3})
     return query.exec();
 }
 
@@ -64,19 +69,17 @@ const deleteBlogById = async (_id) => {
 
 
 // UPDATE model *****************************************************
-const updateBlog = async (_id, blogTitle, blogDate, blogText) => {
+const updateBlog = async (_id, blogTitle, blogText) => {
     const result = await blogs.replaceOne({_id: _id }, {
         blogTitle: blogTitle,
-        blogDate: blogDate,
         blogText: blogText
     });
     return { 
         _id: _id, 
         blogTitle: blogTitle,
-        blogDate: blogDate,
         blogText: blogText
     }
 }
 
 // EXPORT the variables for use in the controller file.
-export { createBlog, retrieveBlogs, retrieveBlogByID, updateBlog, deleteBlogById }
+export { createBlog, retrieveBlogs, retrieveRecentBlogs, retrieveBlogByID, updateBlog, deleteBlogById }

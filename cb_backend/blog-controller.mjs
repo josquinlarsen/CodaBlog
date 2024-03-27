@@ -2,7 +2,7 @@
 
 import 'dotenv/config';
 import express from 'express';
-import * as blogs from './blogs-model.mjs';
+import * as blogs from './blog-model.mjs';
 
 const PORT = process.env.PORT;
 const app = express();
@@ -13,7 +13,6 @@ app.use(express.json());  // REST needs JSON MIME type.
 app.post ('/blogs', (req,res) => { 
     blogs.createBlog(
         req.body.blogTitle, 
-        req.body.blogDate, 
         req.body.blogText
         )
         .then(blog => {
@@ -33,6 +32,23 @@ app.get('/blogs', (req, res) => {
         .then(blogs => { 
             if (blogs !== null) {
                 console.log(`All posts were retrieved from the collection.`);
+                res.json(blogs);
+            } else {
+                res.status(404).json({ Error: 'We are unable to retrieve that URL.' });
+            }         
+         })
+        .catch(error => {
+            console.log(error);
+            res.status(400).json({ Error: 'There has been a mistake. Resubmit your request (check your spelling!).' });
+        });
+});
+
+// RETRIEVE recent blogs
+app.get('/blogs', (req, res) => {
+    blogs.retrieveRecentBlogs()
+        .then(blogs => { 
+            if (blogs !== null) {
+                console.log(`Here are the most recent posts from the collection.`);
                 res.json(blogs);
             } else {
                 res.status(404).json({ Error: 'We are unable to retrieve that URL.' });
@@ -69,7 +85,6 @@ app.put('/blogs/:_id', (req, res) => {
     blogs.updateBlog(
         req.params._id, 
         req.body.blogTitle, 
-        req.body.blogDate, 
         req.body.blogText
     )
     .then(blog => {
