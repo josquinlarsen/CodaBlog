@@ -11,21 +11,22 @@ It allows for CRUD functionality. A user can create, read, update, or delete a b
 - JavaScript
 
 ## GIF examples
+Home Page
 <p>
   <image src='cb_gifs/cb_home.gif' width=350><br>
 </p>
-Home Page
+Create Post
 <p>
   <img src='cb_gifs/cb_create.gif' width=350><br>
 </p>
-Create Post
 
+Update Post
 <p>
   <img src='cb_gifs/cb_edit.gif' width=350><br>
 </p>
-Update Post
 
+Delete Post
 <p>
   <image src='cb_gifs/cb_delete.gif' width=350><br>
 </p>
-Delete Post
+
