@@ -1,10 +1,20 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
+
+
 export const CreatePage = () => {
 
+    function getDate() {
+        const today = new Date();
+        const month = today.toLocaleString('default', { month: 'long'});
+        const year = today.getFullYear();
+        const date = today.getDate();
+        return `${date} ${month} ${year}`
+    }
+
     const [blogTitle, setBlogTitle]       = useState('');
-    const [blogDate, setBlogDate]         = useState('');
+    const [blogDate, setBlogDate]         = useState(getDate());
     const [blogText, setBlogText]         = useState('');
     
     const redirect = useNavigate();
@@ -54,7 +64,6 @@ export const CreatePage = () => {
                     <label for="submit">
                     <button
                         type="submit"
-                        value={setBlogDate}
                         onClick={addBlog}
                         id="submit"
                     >Post!</button></label>

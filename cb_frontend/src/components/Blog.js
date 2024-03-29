@@ -1,16 +1,17 @@
 import React from 'react';
 import { MdDeleteForever, MdEdit } from 'react-icons/md';
 
-function getDate() {
-    const today = new Date();
-    const month = today.toLocaleString('default', { month: 'long'});
-    const year = today.getFullYear();
-    const date = today.getDate();
-    return `${date} ${month} ${year}`
-}
-
 
 function Blog({ blog, onEdit, onDelete }) {
+    function getDate() {
+        const today = new Date(blog.blogDate);
+        const month = today.toLocaleString('default', { month: 'long'});
+        const year = today.getFullYear();
+        const date = today.getDate();
+        return `${date} ${month} ${year}`
+        
+    }
+
     return (
         <section class="blogblock">
             <div>
@@ -18,7 +19,7 @@ function Blog({ blog, onEdit, onDelete }) {
             <article id="blogPosts">
                 {blog.blogText}
             </article>        
-            <p>{getDate(blog.blogDate)}</p>
+            <p>{getDate()}</p>
             <div class="icons">
             <i alt="Delete Post"><MdDeleteForever onClick={() => onDelete(blog._id)} /></i>
             <i alt="Edit Post"><MdEdit onClick={() => onEdit(blog)} /></i></div>

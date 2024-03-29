@@ -18,12 +18,14 @@
     color:var(--slate);
     font-family:"PT Sans", sans-serif; 
   }
+
+  main { margin:1%; }
   
   /*  ----- Page layout blocks -----  */
   header {
     background-color: var(--green);
     color:var(--salt);
-    position: relative;
+    /* position: relative; */
     border-bottom: 3px solid var(--slate);
     padding:2%;
   }

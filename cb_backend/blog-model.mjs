@@ -23,7 +23,8 @@ db.once("open", (err) => {
 // SCHEMA: Define the collection's schema.
 const blogSchema = mongoose.Schema({
 	blogTitle:    { type: String,  },
-	blogText: { type: String, required: true }
+	blogText: { type: String, required: true },
+    blogDate: { type: Date }
 });
 
 // Compile the model from the schema 
@@ -32,10 +33,11 @@ const blogs = mongoose.model('Blogs', blogSchema);
 
 
 // CREATE model *****************************************
-const createBlog = async (blogTitle, blogText) => {
+const createBlog = async (blogTitle, blogText, blogDate) => {
     const blog = new blogs({ 
         blogTitle: blogTitle, 
-        blogText: blogText 
+        blogText: blogText,
+        blogDate: blogDate
     });
     return blog.save();
 }
@@ -69,15 +71,17 @@ const deleteBlogById = async (_id) => {
 
 
 // UPDATE model *****************************************************
-const updateBlog = async (_id, blogTitle, blogText) => {
+const updateBlog = async (_id, blogTitle, blogText, blogDate) => {
     const result = await blogs.replaceOne({_id: _id }, {
         blogTitle: blogTitle,
-        blogText: blogText
+        blogText: blogText,
+        blogDate: blogDate
     });
     return { 
         _id: _id, 
         blogTitle: blogTitle,
-        blogText: blogText
+        blogText: blogText,
+        blogDate: blogDate
     }
 }
 

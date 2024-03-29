@@ -13,7 +13,8 @@ app.use(express.json());  // REST needs JSON MIME type.
 app.post ('/blogs', (req,res) => { 
     blogs.createBlog(
         req.body.blogTitle, 
-        req.body.blogText
+        req.body.blogText,
+        req.body.blogDate
         )
         .then(blog => {
             console.log(`"${blog.blogTitle}" has been posted!`);
@@ -85,7 +86,8 @@ app.put('/blogs/:_id', (req, res) => {
     blogs.updateBlog(
         req.params._id, 
         req.body.blogTitle, 
-        req.body.blogText
+        req.body.blogText,
+        req.body.blogDate
     )
     .then(blog => {
         console.log(`"${blog.blogTitle}" was updated.`);

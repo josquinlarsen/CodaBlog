@@ -2,7 +2,7 @@ import React from 'react';
 
 function RecentBlog ({ blog }) {
     function getDate() {
-        const today = new Date();
+        const today = new Date(blog.blogDate);
         const month = today.toLocaleString('default', { month: 'long'});
         const year = today.getFullYear();
         const date = today.getDate();
@@ -17,7 +17,7 @@ function RecentBlog ({ blog }) {
             <article id="blogPosts">
                 {blog.blogText}
             </article>        
-            <p>{getDate(blog.blogDate)}</p>
+            <p>{getDate()}</p>
             </div>
         </section>
         

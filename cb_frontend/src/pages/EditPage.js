@@ -1,6 +1,14 @@
 import React, { useState }  from 'react';
 import { useNavigate } from "react-router-dom";
 
+function getDate() {
+    const today = new Date();
+    const month = today.toLocaleString('default', { month: 'long'});
+    const year = today.getFullYear();
+    const date = today.getDate();
+    return `${date} ${month} ${year}`
+}
+
 export const EditPage = ({ blogToEdit }) => {
  
     const [blogTitle, setBlogTitle]       = useState(blogToEdit.blogTitle);
@@ -14,14 +22,14 @@ export const EditPage = ({ blogToEdit }) => {
             method: 'PUT',
             body: JSON.stringify({ 
                 blogTitle: blogTitle, 
-                // blogDate: blogDate, 
+                blogDate: blogDate, 
                 blogText: blogText
             }),
             headers: {'Content-Type': 'application/json',},
         });
 
         if (response.status === 200) {
-            alert(`You're changes have been saved`);
+            alert(`Your changes have been saved`);
         } else {
             const errMessage = await response.json();
             alert(`There has been some kind of issue. Try again later. ${response.status}. ${errMessage.Error}`);
